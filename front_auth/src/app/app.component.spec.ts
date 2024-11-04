@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'coordination-front-back-authentication_playground' title`, () => {
+  it(`should have the 'front_auth' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('coordination-front-back-authentication_playground');
+    expect(app.title).toEqual('front_auth');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, coordination-front-back-authentication_playground');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, front_auth');
   });
 });
