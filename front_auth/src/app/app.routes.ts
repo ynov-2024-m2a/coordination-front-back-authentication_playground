@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { JwtAuthComponent } from './jwt-auth/jwt-auth.component';
+import { Auth0AuthComponent } from './auth0-auth/auth0-auth.component';
 
 export const routes: Routes = [
-  { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/register', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
+  { path: 'jwt-auth', component: JwtAuthComponent },
+  { path: 'auth0-auth', component: Auth0AuthComponent },
+  { path: '**', redirectTo: '' },
 ];

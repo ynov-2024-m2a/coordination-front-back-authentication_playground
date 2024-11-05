@@ -9,6 +9,7 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
   private baseUrl = 'http://localhost:3000/auth';
   private authToken = new BehaviorSubject<string | null>(null);
+  private loggedIn = false;
 
   constructor(private http: HttpClient) {}
 
@@ -22,11 +23,20 @@ export class AuthService {
         const token = response.access_token;
         this.authToken.next(token);
         localStorage.setItem('authToken', token);
+        this.loggedIn = true;
       })
     );
   }
 
+  logout() {
+    this.loggedIn = false;
+  }
+
   getToken(): string | null {
     return localStorage.getItem('authToken');
+  }
+
+  isAuthenticated(): boolean {
+    return this.loggedIn;
   }
 }

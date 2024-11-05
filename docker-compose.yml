@@ -4,16 +4,19 @@ services:
   db:
     image: mysql:8.0
     container_name: auth_bdd
-    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root   # Mot de passe de l'utilisateur root
-      MYSQL_DATABASE: auth_poc            # Nom de la base de données
-      MYSQL_USER: mysql               # Utilisateur de la base de données
-      MYSQL_PASSWORD: mysql          # Mot de passe de l'utilisateur
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: auth_poc
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_HOST: '%'
     ports:
-      - "3306:3306"                       # Expose le port MySQL
+      - "3306:3306"
+    command: [
+      "--default-authentication-plugin=mysql_native_password"
+    ]
     volumes:
-      - db_data:/var/lib/mysql            # Volume pour persister les données
+      - db_data:/var/lib/mysql
 
 volumes:
   db_data:
