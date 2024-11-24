@@ -10,7 +10,7 @@ start: start-front start-api start-db ## Start all services
 down: ## Stop and remove all services
 	$(DOCKER_COMPOSE) down
 
-logs: logs-angular logs-nestjs logs-db ## Show logs for all services
+logs: logs-front logs-api logs-db ## Show logs for all services
 clean: ## Clean all services, including volumes and orphan containers
 	$(DOCKER_COMPOSE) down --volumes --remove-orphans
 

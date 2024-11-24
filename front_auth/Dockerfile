@@ -1,17 +1,22 @@
-# Dockerfile (front/Dockerfile)
-FROM node:18 AS build
+# Dockerfile (front_auth/Dockerfile)
 
+# Utiliser une image Node.js
+FROM node:18
+
+# Définir le répertoire de travail
 WORKDIR /app
 
+# Copier les fichiers package.json et package-lock.json
 COPY package*.json ./
+
+# Installer les dépendances
 RUN npm install
 
+# Copier tout le contenu du projet Angular
 COPY . .
-RUN npm run build --prod
 
-# Serveur léger pour servir les fichiers
-FROM nginx:alpine
-COPY --from=build /app/dist/front_auth /usr/share/nginx/html
+# Exposer le port utilisé par l'application Angular (par défaut 4200)
+EXPOSE 4200
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Lancer l'application Angular en mode développement
+CMD ["npm", "run", "start"]

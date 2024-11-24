@@ -8,6 +8,9 @@ services:
       - nestjs
     networks:
       - app-network
+    volumes:
+      - ./front_auth:/app
+      - /app/node_modules
 
   nestjs:
     build:
