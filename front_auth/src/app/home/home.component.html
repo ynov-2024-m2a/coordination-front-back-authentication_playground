@@ -1,8 +1,43 @@
-<mat-tab-group>
-  <mat-tab label="JWT Authentication">
-    <app-jwt-auth></app-jwt-auth>
-  </mat-tab>
-  <mat-tab label="Auth0 Authentication">
-    <app-auth0-auth></app-auth0-auth>
-  </mat-tab>
-</mat-tab-group>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page d'Accueil - Authentification</title>
+</head>
+<body>
+  <header>
+    <h1>Découvrez les différents type d'authentification via ce POC</h1>
+    <p>Rendez-vous sur les onglets à votre disposition pour ça !</p>
+  </header>
+
+  <section id="password-auth">
+    <h2>Authentification par mot de passe</h2>
+    <p>L'authentification par mot de passe est la méthode la plus courante. L'utilisateur doit fournir un nom d'utilisateur et un mot de passe pour accéder à son compte. Cette méthode est simple mais peut être vulnérable aux attaques par force brute et au phishing.</p>
+  </section>
+
+  <section id="otp-auth">
+    <h2>Authentification par OTP (One-Time Password)</h2>
+    <p>Cette méthode utilise un mot de passe à usage unique envoyé par SMS ou email. L'utilisateur doit entrer ce code pour se connecter. Les OTP sont souvent utilisés comme une couche de sécurité supplémentaire en plus des mots de passe traditionnels.</p>
+  </section>
+
+  <section id="biometric-auth">
+    <h2>Authentification biométrique</h2>
+    <p>L'authentification biométrique utilise des caractéristiques physiques uniques de l'utilisateur, comme les empreintes digitales, la reconnaissance faciale ou la reconnaissance vocale, pour vérifier son identité. Cette méthode est très sécurisée mais nécessite des dispositifs matériels spécifiques.</p>
+  </section>
+
+  <section id="oauth-auth">
+    <h2>Authentification OAuth</h2>
+    <p>OAuth est un protocole d'autorisation qui permet à une application d'accéder aux ressources d'un utilisateur sur un autre service sans partager les informations d'identification de l'utilisateur. Il est couramment utilisé pour permettre la connexion via des comptes de réseaux sociaux comme Google ou Facebook.</p>
+  </section>
+
+  <section id="sso-auth">
+    <h2>Authentification SSO (Single Sign-On)</h2>
+    <p>Le SSO permet à un utilisateur de se connecter une seule fois pour accéder à plusieurs applications ou services. Cela simplifie le processus de connexion et améliore l'expérience utilisateur. Les entreprises utilisent souvent le SSO pour permettre à leurs employés d'accéder à divers systèmes internes avec un seul jeu d'identifiants.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Votre Entreprise. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

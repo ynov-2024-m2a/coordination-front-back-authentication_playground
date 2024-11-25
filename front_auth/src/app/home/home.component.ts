@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { JwtAuthComponent } from '../jwt-auth/jwt-auth.component';
-import { Auth0AuthComponent } from '../auth0-auth/auth0-auth.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatTabsModule, CommonModule, JwtAuthComponent, Auth0AuthComponent],
+  imports: [MatTabsModule, MatButtonModule, MatToolbarModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

@@ -24,6 +24,9 @@ start-front: ## Start only the Angular container
 logs-front: ## Show logs for the Angular container
 	$(DOCKER_COMPOSE) logs -f angular
 
+stop-front: ## Stop only the Angular Front App
+	$(DOCKER_COMPOSE) down angular
+
 # Commandes pour NestJS (Backend)
 build-api: ## Build the NestJS container
 	$(DOCKER_COMPOSE) build nestjs
@@ -34,6 +37,9 @@ start-api: ## Start only the NestJS container
 logs-api: ## Show logs for the NestJS container
 	$(DOCKER_COMPOSE) logs -f nestjs
 
+stop-api: ## Stop only the NestJS Backend App
+	$(DOCKER_COMPOSE) down nestjs
+
 # Commandes pour MySQL (Database)
 build-db: ## Build the MySQL container
 	$(DOCKER_COMPOSE) build db
@@ -43,6 +49,9 @@ start-db: ## Start only the MySQL container
 
 logs-db: ## Show logs for the MySQL container
 	$(DOCKER_COMPOSE) logs -f db
+
+stop-db: ## Stop only the MySQL Database
+	$(DOCKER_COMPOSE) down db
 
 # Help
 help: ## Show this help

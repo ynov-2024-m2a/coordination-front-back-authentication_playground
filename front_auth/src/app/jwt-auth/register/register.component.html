@@ -1,1 +1,37 @@
-<p>register works!</p>
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <mat-card-title>Inscription</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Nom</mat-label>
+          <input matInput formControlName="name" type="text" placeholder="Ex: Dupont" />
+          <mat-error *ngIf="signupForm.get('name')?.invalid">Nom invalide</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" placeholder="Ex: user@example.com" />
+          <mat-error *ngIf="signupForm.get('email')?.invalid">Email invalide</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput formControlName="password" type="password" />
+          <mat-error *ngIf="signupForm.get('password')?.invalid">Mot de passe requis (min. 6 caractères)</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Confirmer le mot de passe</mat-label>
+          <input matInput formControlName="confirmPassword" type="password" />
+          <mat-error *ngIf="signupForm.hasError('passwordMismatch')">Les mots de passe ne correspondent pas</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="full-width" [disabled]="signupForm.invalid">S'inscrire</button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="/login">Déjà inscrit ? Connectez-vous</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

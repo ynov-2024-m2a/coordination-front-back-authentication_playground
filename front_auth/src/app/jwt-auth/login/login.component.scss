@@ -1,0 +1,47 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.auth-card {
+  width: 400px;
+  padding: 24px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-card-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+mat-card {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button {
+  align-self: flex-end;
+}

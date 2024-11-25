@@ -1,0 +1,44 @@
+/* Styling pour la barre de navigation */
+.custom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  background: #1976d2; /* Couleur Material Blue par défaut */
+  padding: 0 24px; /* Espacement horizontal */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+}
+
+/* Titre du menu */
+.toolbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Conteneur des liens */
+.toolbar-links {
+  display: flex;
+  gap: 16px; /* Espacement entre les liens */
+}
+
+/* Liens */
+.toolbar-link {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Effet au survol */
+.toolbar-link:hover {
+  color: #ffc107; /* Accent jaune */
+}
+
+/* Liens actifs */
+.toolbar-link.active {
+  border-bottom: 2px solid #ffc107; /* Indication de lien actif */
+}

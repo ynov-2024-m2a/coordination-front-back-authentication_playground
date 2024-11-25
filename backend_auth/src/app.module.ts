@@ -9,13 +9,13 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'mysql',
-      password: 'mysql',
-      database: 'auth_poc',
+      host: process.env.DATABASE_HOST || 'localhost',
+      port: parseInt(process.env.DATABASE_PORT, 10) || 3306,
+      username: process.env.DATABASE_USER || 'root',
+      password: process.env.DATABASE_PASSWORD || 'root',
+      database: process.env.DATABASE_NAME || 'test',
       entities: [User],
-      synchronize: true,
+      synchronize: true, // Ne pas activer en production
     }),
     AuthModule,
     UserModule,
